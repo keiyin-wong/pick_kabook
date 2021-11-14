@@ -12,7 +12,7 @@ $(document).ready(function(){
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
-            var parameterList = JSON.parse(escapeHtml(JSON.stringify(data.results)));
+            var parameterList = JSON.parse(JSON.stringify(data.results));
             $.each(parameterList,function() {
                 var html = "<div class='col-md-4'>" + 
 				"<div class='product-item'>" +
