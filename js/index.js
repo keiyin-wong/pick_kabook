@@ -35,7 +35,7 @@ $(document).ready(function(){
                       	"</div>" +
 					"</div>" +
 					"<div class='product-content'>" +
-						"<h4><a href='product-single.html?name="+this.properties.Name.title[0].plain_text+"'>"+this.properties.Name.title[0].plain_text+"</a></h4>" +
+						"<h4><a href='product-single.html?id="+this.properties.Id.number+"'>"+this.properties.Name.title[0].plain_text+"</a></h4>" +
 						"<p class='price'>RM"+this.properties.Price.number+"</p>" +
 					"</div>" +
 				"</div>" +

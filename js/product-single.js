@@ -10,12 +10,12 @@ $(document).ready(function(){
            return results[1] || 0;
         }
     }
-    var name = $.urlParam("name");
+    var id = $.urlParam("id");
     var data = {
         "filter":{
             "property":"Name",
             "text":{
-                "equals":name
+                "equals":id
             }
         }
     };
