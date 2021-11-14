@@ -5,17 +5,13 @@ $(document).ready(function(){
 
     $.ajax({
         type: "POST",
-        url: "https://api.notion.com/v1/databases/"+databaseId+"/query",
-        beforeSend: function(request) {
-            request.setRequestHeader("Authorization", "Bearer "+token);
-            request.setRequestHeader("Notion-Version", "2021-08-16");
-            request.setRequestHeader("Access-Control-Allow-Origin", "*");
-            request.withCredentials = true;
+        url: "https://keiyin.tk/notionBestSeller",
+        headers: {
+            "Authorization": "Bearer "+token,
+            "Notion-Version": "2021-08-16"
         },
-        crossDomain: true,
-        contentType: "application/json; charset=utf-8",
         dataType: "json",
-        secure: true,
+        contentType: "application/json; charset=utf-8",
         success: function(data){
             alert(data);
         },
