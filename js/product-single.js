@@ -31,7 +31,9 @@ $(document).ready(function(){
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
-            alert(data);
+            var book = data.results;
+            $("#bookImage").attr("src",book[0].properties.Image.files[0].file.url);
+            $(".single-product-details > h2").html(book.properties.Name.title[0].plain_text);
         },
         error: function(data){
             console.log(data.statusText);
