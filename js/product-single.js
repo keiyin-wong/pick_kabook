@@ -33,7 +33,7 @@ $(document).ready(function(){
         success: function(data){
             var book = data.results;
             $("#bookImage").attr("src",book[0].properties.Image.files[0].file.url);
-            $(".single-product-details > h2").html(book.properties.Name.title[0].plain_text);
+            $(".single-product-details > h2").html(book[0].properties.Name.title[0].plain_text);
         },
         error: function(data){
             console.log(data.statusText);
