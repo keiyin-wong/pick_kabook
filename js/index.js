@@ -17,7 +17,7 @@ $(document).ready(function(){
                 var html = "<div class='col-md-4'>" + 
 				"<div class='product-item'>" +
 					"<div class='product-thumb'>" +
-						"<img class='img-responsive' src='images/shop/products/product-1.jpg' alt='product-img' />"+
+						"<img class='img-responsive' src="+this.properties.Image.files[0].file.url+" alt='product-img' />"+
 						"<div class='preview-meta'>" +
 							"<ul>" +
 								"<li>" +
@@ -35,8 +35,8 @@ $(document).ready(function(){
                       	"</div>" +
 					"</div>" +
 					"<div class='product-content'>" +
-						"<h4><a href='product-single.html?name=123'>Hello World</a></h4>" +
-						"<p class='price'>$200</p>" +
+						"<h4><a href='product-single.html?name=123'>"+this.properties.Name.title[0].plainText+"</a></h4>" +
+						"<p class='price'>RM"+this.properties.Price.number+"</p>" +
 					"</div>" +
 				"</div>" +
 			"</div>";
