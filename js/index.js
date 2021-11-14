@@ -4,7 +4,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "POST",
-        url: "https://keiyin.tk/notionBestSeller",
+        url: "https://pickkabook.tk/notionBestSeller",
         headers: {
             "Authorization": "Bearer "+token,
             "Notion-Version": "2021-08-16"
