@@ -14,7 +14,7 @@ $(document).ready(function(){
     var data = {
         "filter":{
             "property":"Id",
-            "text":{
+            "number":{
                 "equals":id
             }
         }
