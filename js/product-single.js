@@ -13,7 +13,7 @@ $(document).ready(function(){
     var id = $.urlParam("id");
     var data = {
         "filter":{
-            "property":"Name",
+            "property":"Id",
             "text":{
                 "equals":id
             }
