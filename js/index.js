@@ -1,12 +1,22 @@
 $(document).ready(function(){
     //alert("hello");
 
+    var data = {
+        "filter":{
+            "property":"Tag",
+            "multi_select":{
+                "contains":"Best Seller"
+            }
+        }
+    };
+
     $.ajax({
         type: "POST",
         url: "https://pickkabook.tk/getAllBook",
         headers: {
             "Notion-Version": "2021-08-16"
         },
+		data = JSON.stringify(data),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
