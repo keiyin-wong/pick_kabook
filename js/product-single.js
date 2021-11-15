@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    var token = "secret_lJj3ZfB62VLsgEgvKIHy7sWzhL8Wo9PEUWVnSRcwYUc";
 
     $.urlParam = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -24,7 +23,6 @@ $(document).ready(function(){
         type: "POST",
         url: "https://pickkabook.tk/notionBestSeller",
         headers: {
-            "Authorization": "Bearer "+token,
             "Notion-Version": "2021-08-16"
         },
         data:JSON.stringify(data),
