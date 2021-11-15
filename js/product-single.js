@@ -26,7 +26,6 @@ $(document).ready(function(){
             "Notion-Version": "2021-08-16",
             "Id":id
         },
-        data:JSON.stringify(data),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
