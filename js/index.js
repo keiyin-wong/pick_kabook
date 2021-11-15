@@ -16,7 +16,7 @@ $(document).ready(function(){
         headers: {
             "Notion-Version": "2021-08-16"
         },
-		data = JSON.stringify(data),
+		data : JSON.stringify(data),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
