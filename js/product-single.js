@@ -10,7 +10,7 @@ $(document).ready(function(){
         }
     }
     var id = parseInt($.urlParam("id"));
-    var url = parseInt($.urlParam("url"));
+    var url = $.urlParam("url");
     var data = {
         "filter":{
             "property":"Id",
