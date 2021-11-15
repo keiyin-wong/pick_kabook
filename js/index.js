@@ -2,13 +2,24 @@ $(document).ready(function(){
     //alert("hello");
 
     var data = {
-        "filter":{
-            "property":"Tag",
-            "multi_select":{
-                "contains":"Best Seller"
-            }
-        }
-    };
+		"filter":{
+			"and":[
+				{
+					"property":"Tag",
+					"multi_select":{
+						"contains": "Best Seller"
+					}
+				},
+				{
+					"property":"Display",
+					"checkbox":{
+						"equals": true
+					}
+				}
+			]
+		}
+	}
+	
 
     $.ajax({
         type: "POST",
