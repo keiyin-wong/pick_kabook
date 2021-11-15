@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     $.ajax({
         type: "POST",
-        url: "https://pickkabook.tk/notionBestSeller",
+        url: "https://pickkabook.tk/getAllBook",
         headers: {
             "Notion-Version": "2021-08-16"
         },
@@ -33,7 +33,7 @@ $(document).ready(function(){
                       	"</div>" +
 					"</div>" +
 					"<div class='product-content'>" +
-						"<h4><a href='product-single.html?id="+this.properties.Id.number+"&url=notionBestSeller'>"+this.properties.Name.title[0].plain_text+"</a></h4>" +
+						"<h4><a href='product-single.html?id="+this.properties.Id.number+"&url=getAllBook'>"+this.properties.Name.title[0].plain_text+"</a></h4>" +
 						"<p class='price'>RM"+this.properties.Price.number+"</p>" +
 					"</div>" +
 				"</div>" +
