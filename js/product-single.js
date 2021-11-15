@@ -9,35 +9,34 @@ $(document).ready(function(){
            return results[1] || 0;
         }
     }
-    var id = parseInt($.urlParam("id"));
-    var url = $.urlParam("url");
-    var data = {
-        "filter":{
-            "property":"Id",
-            "number":{
-                "equals":id
-            }
-        }
-    };
+    var id =$.urlParam("id");
+    // var data = {
+    //     "filter":{
+    //         "property":"Id",
+    //         "number":{
+    //             "equals":id
+    //         }
+    //     }
+    // };
     
     $.ajax({
         type: "POST",
-        url: "https://pickkabook.tk/"+url,
+        url: "https://pickkabook.tk/getBook",
         headers: {
-            "Notion-Version": "2021-08-16"
+            "Notion-Version": "2021-08-16",
+            "Id":id
         },
         data:JSON.stringify(data),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function(data){
-            var book = data.results;
-            $("#bookImage").attr("src",book[0].properties.Image.files[0].file.url);
-            $(".single-product-details > h2").html(book[0].properties.Name.title[0].plain_text);
-            if(!book[0].properties.Description.rich_text.length == 0){
-                $(".product-description").html(book[0].properties.Description.rich_text[0].plain_text);
-                $("#details > p").html(book[0].properties.Description.rich_text[0].plain_text);
+            $("#bookImage").attr("src",data.properties.Image.files[0].file.url);
+            $(".single-product-details > h2").html(data.properties.Name.title[0].plain_text);
+            if(!data.properties.Description.rich_text.length == 0){
+                $(".product-description").html(data.properties.Description.rich_text[0].plain_text);
+                $("#details > p").html(data.properties.Description.rich_text[0].plain_text);
             }
-            $(".product-price").html("RM" + book[0].properties.Price.number);
+            $(".product-price").html("RM" + data.properties.Price.number);
         },
         error: function(data){
             console.log(data.statusText);
