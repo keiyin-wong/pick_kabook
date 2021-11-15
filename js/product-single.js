@@ -20,7 +20,7 @@ $(document).ready(function(){
     // };
     
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "https://pickkabook.tk/getBook",
         headers: {
             "Notion-Version": "2021-08-16",
