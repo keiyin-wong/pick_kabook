@@ -1,12 +1,10 @@
 $(document).ready(function(){
     //alert("hello");
-    var token = "secret_lJj3ZfB62VLsgEgvKIHy7sWzhL8Wo9PEUWVnSRcwYUc";
 
     $.ajax({
         type: "POST",
         url: "https://pickkabook.tk/notionBestSeller",
         headers: {
-            "Authorization": "Bearer "+token,
             "Notion-Version": "2021-08-16"
         },
         dataType: "json",
