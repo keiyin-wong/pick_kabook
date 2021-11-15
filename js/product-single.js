@@ -33,7 +33,7 @@ $(document).ready(function(){
             var book = data.results;
             $("#bookImage").attr("src",book[0].properties.Image.files[0].file.url);
             $(".single-product-details > h2").html(book[0].properties.Name.title[0].plain_text);
-            if(typeof book[0].properties.Description.rich_text[0].plain_text !== "undefined"){
+            if(!book[0].properties.Description.rich_text.length == 0){
                 $(".product-description").html(book[0].properties.Description.rich_text[0].plain_text);
                 $("#details > p").html(book[0].properties.Description.rich_text[0].plain_text);
             }
