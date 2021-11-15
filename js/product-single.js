@@ -10,6 +10,7 @@ $(document).ready(function(){
         }
     }
     var id = parseInt($.urlParam("id"));
+    var url = parseInt($.urlParam("url"));
     var data = {
         "filter":{
             "property":"Id",
@@ -21,7 +22,7 @@ $(document).ready(function(){
     
     $.ajax({
         type: "POST",
-        url: "https://pickkabook.tk/notionBestSeller",
+        url: "https://pickkabook.tk/"+url,
         headers: {
             "Notion-Version": "2021-08-16"
         },
@@ -32,6 +33,8 @@ $(document).ready(function(){
             var book = data.results;
             $("#bookImage").attr("src",book[0].properties.Image.files[0].file.url);
             $(".single-product-details > h2").html(book[0].properties.Name.title[0].plain_text);
+            $(".product-description").html(book[0].properties.Description.rich_text[0].plain_text);
+            $(".product-price").html(book[0].properties.Price.number);
         },
         error: function(data){
             console.log(data.statusText);
